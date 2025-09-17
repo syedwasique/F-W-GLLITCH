@@ -1,0 +1,344 @@
+/* Contact Section Styles */
+.contact-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  /* background: var(--dark); */
+  color: #fff;
+  position: relative;
+  scroll-margin-top: 80px;
+  overflow: hidden;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+background-color: #fff;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-family: 'Gucina-Regular', sans-serif;
+  letter-spacing: 1px;
+}
+
+.contact-para {
+  font-size: 1.2rem;
+color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-content {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  color: var(--text-secondary);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(10, 10, 26, 0.7);
+  color: var(--text);
+  backdrop-filter: blur(5px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 1.5rem;
+  left: 3.5rem;
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  pointer-events: none;
+  /* background: var(--dark); */
+  padding: 0 0.5rem;
+  z-index: 3;
+}
+
+.focus-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+  border-radius: 0 0 8px 8px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(75, 18, 234, 0.3);
+  background-color: rgba(10, 10, 26, 0.9);
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.8rem;
+  left: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--primary);
+  transform: translateY(0);
+}
+
+.form-group input:focus ~ .focus-line,
+.form-group textarea:focus ~ .focus-line {
+  width: 100%;
+}
+
+.form-group input:focus ~ .input-icon,
+.form-group textarea:focus ~ .input-icon {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.submit-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.4s;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+}
+
+.btn-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.submit-btn:hover .btn-hover-effect {
+  opacity: 1;
+}
+
+.send-icon {
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover .send-icon {
+  transform: translateX(5px);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(10, 10, 26, 0.5);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-weight: 600;
+background-color: #fff;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(110, 69, 226, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.info-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.info-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.status-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-message.success {
+  background-color: rgba(75, 181, 67, 0.1);
+  border: 1px solid rgba(75, 181, 67, 0.3);
+  color: #4BB543;
+}
+
+.status-message.error {
+  background-color: rgba(255, 59, 48, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  color: #FF3B30;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-info {
+    order: -1;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .contact-para {
+    font-size: 1rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 1.2rem 1.2rem 1.2rem 3rem;
+  }
+  
+  .input-icon {
+    left: 1.2rem;
+    top: 1.2rem;
+  }
+  
+  .form-group label {
+    left: 3rem;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.info-item:hover .info-icon {
+  animation: float 2s ease-in-out infinite;
+  background: rgba(110, 69, 226, 0.2);
+  color: var(--primary-light);
+}
+
+/* Background elements */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 69, 226, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

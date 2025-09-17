@@ -1,0 +1,439 @@
+/* About Section - Fully Responsive Version */
+:root {
+  --primary: #6e45e2;
+  --primary-light: #8d6eff;
+  --secondary: #00d4ff;
+  --accent: #00ff9d;
+  --dark: #0a0a1a;
+  --darker: #050510;
+  --light: #f0f0f5;
+  --text: rgba(255,255,255,0.95);
+  --text-secondary: rgba(255,255,255,0.7);
+  --font-heading: 'Bai Jamjuree', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  padding: 5rem 2rem;
+  background-color: var(--dark);
+  color: var(--text);
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+}
+
+/* Animated Particles */
+.about-particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
+  filter: blur(1px);
+  will-change: transform, opacity;
+}
+
+/* Main Container */
+.about-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced Crystal Logo Design */
+.about-logo-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  height: 100%;
+  min-height: 400px;
+}
+
+.logo-crystal {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 450px;
+  transform-style: preserve-3d;
+  animation: float 8s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+  50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+}
+
+.crystal-core {
+  position: relative;
+  width: 65%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(110, 69, 226, 0.3);
+  transform: translateZ(30px);
+}
+
+.about-logo {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.7));
+  position: relative;
+  z-index: 4;
+}
+
+.crystal-facets {
+  position: absolute;
+  width: 120%;
+  height: 170%;
+  transform-style: preserve-3d;
+  animation: rotate 30s infinite linear;
+}
+
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.crystal-facet {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 212, 255, 0.03);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 20px;
+  transform-origin: center;
+  animation: facet-pulse 4s infinite alternate;
+}
+
+.crystal-facet:nth-child(1) { transform: rotateY(0deg) rotateX(20deg); }
+.crystal-facet:nth-child(2) { transform: rotateY(60deg) rotateX(20deg); }
+.crystal-facet:nth-child(3) { transform: rotateY(120deg) rotateX(20deg); }
+.crystal-facet:nth-child(4) { transform: rotateY(180deg) rotateX(20deg); }
+.crystal-facet:nth-child(5) { transform: rotateY(240deg) rotateX(20deg); }
+.crystal-facet:nth-child(6) { transform: rotateY(300deg) rotateX(20deg); }
+
+@keyframes facet-pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+.crystal-glows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0;
+  animation: glow-pulse 6s infinite;
+  z-index: 1;
+}
+
+.glow-1 {
+  width: 150px;
+  height: 150px;
+  background: var(--primary);
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.glow-2 {
+  width: 120px;
+  height: 120px;
+  background: var(--secondary);
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.glow-3 {
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 4s;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+/* Content Side */
+.about-content-side {
+  flex: 1;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.title-highlight {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.about-title:hover .title-highlight::after {
+  transform: scaleX(1);
+}
+
+.about-description {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Feature Cards */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.feature-card:hover {
+  background: rgba(110, 69, 226, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(110, 69, 226, 0.2);
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--light);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* CTA Button */
+.about-cta-container {
+  position: relative;
+  margin-top: auto;
+}
+
+.about-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.about-cta span {
+  position: relative;
+  z-index: 3;
+}
+
+.cta-icon {
+  position: relative;
+  z-index: 3;
+  transition: transform 0.3s;
+}
+
+.cta-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  border-radius: 50px;
+}
+
+.about-cta:hover .cta-hover {
+  opacity: 1;
+}
+
+.about-cta:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    gap: 3rem;
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 0;
+  }
+  
+  .about-logo-side {
+    order: -1;
+    min-height: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-crystal {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  
+  .about-content-side {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+  
+  .about-features {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1rem;
+  }
+  
+  .logo-crystal {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  
+  .crystal-core {
+    width: 70%;
+    height: 70%;
+  }
+  
+  .about-logo {
+    width: 85%;
+    height: 85%;
+  }
+  
+  .feature-card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+  
+  .logo-crystal {
+    max-width: 220px;
+    max-height: 220px;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .about-cta {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.main-title{
+  font-family: 'Gucina-Regular', sans-serif;
+  letter-spacing: 2px;
+  font-size: 3rem;
+}
