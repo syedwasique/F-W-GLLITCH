@@ -286,14 +286,7 @@ const Work = ({ theme, themeIndex }) => {
                           >
                             View Full Case Study
                           </motion.button>
-                          <a 
-                            href={project.liveLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="live-link"
-                          >
-                            <FiExternalLink /> Live Demo
-                          </a>
+                         
                         </motion.div>
                       </motion.div>
                     </motion.div>
@@ -388,16 +381,7 @@ const Work = ({ theme, themeIndex }) => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.6 }}
                     >
-                      <motion.a 
-                        href={project.liveLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="modal-live-link"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FiExternalLink /> Visit Live Project
-                      </motion.a>
+                      
                     </motion.div>
                   </motion.div>
                 )
