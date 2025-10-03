@@ -4,8 +4,8 @@ import { FiExternalLink, FiChevronDown, FiChevronUp, FiX } from 'react-icons/fi'
 import './Work.css';
 import OptiManageImage from './Capture.png';
 import QuranVisionImage from './Capture1.png';
-import DreamFragranceImage from './Capture2.jpg'
-import SoleHubImage from './Capture3.jpg'
+import DreamFragranceImage from './Capture2.jpg';
+import SoleHubImage from './Capture3.jpg';
 
 const Work = ({ theme, themeIndex }) => {
   const [expandedProject, setExpandedProject] = useState(null);
